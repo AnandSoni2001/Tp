@@ -7,7 +7,7 @@ deta = Deta(st.secrets["key_number"])
 db = deta.Base("Jewel")
 db1 = deta.Base("Counter")
 
-st.write(db1.fetch().items)
+st.write(db1.fetch().items[0]["value"])
 n=1
 st.set_page_config(page_title="Enter Data", page_icon="📈")
 
