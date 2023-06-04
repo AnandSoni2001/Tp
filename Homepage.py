@@ -3,6 +3,11 @@ import streamlit as st
 import streamlit_authenticator as stauth
 from yaml.loader import SafeLoader
 
+st.set_page_config(
+    page_title="Jewel",
+    page_icon="👋",
+)
+
 with open('pass.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 
@@ -24,12 +29,6 @@ elif authentication_status is False:
     st.error('Username/password is incorrect')
 elif authentication_status is None:
     st.warning('Please enter your username and password')
-
-
-st.set_page_config(
-    page_title="Jewel",
-    page_icon="👋",
-)
 
 st.write("# Welcome to your website 👋")
 
