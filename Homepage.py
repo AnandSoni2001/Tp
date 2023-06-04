@@ -34,7 +34,7 @@ if authentication_status:
     
     st.write('\n')
     number = st.number_input('Search by Job Number', step=1)
-    st.write('The job number : ', number)
+    x = st.button('Search')
     
     st.write('\n')
     y = st.button('View all data !')
