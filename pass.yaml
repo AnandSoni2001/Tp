@@ -1,0 +1,17 @@
+credentials:
+  usernames:
+    arjunkala:
+      name: Arjun Kala
+      password: $2b$12$jhGrkT/RfG4tHBlQOy/Xy.hLLiJOrQ/lMRlfwiDI0Yx0cKObwIwvy
+    anandsoni:
+      email: anand.rsoni2001@gmail.com
+      name: Anand Soni
+      password: $2b$12$t/e/3beOeR6gCPyS4JleM.HO4s1n7kvcrUjPVabo2O8z/t72o6Rqq
+
+cookie:
+  expiry_days: 30
+  key: Jewel
+  name: JewelCookie
+preauthorized:
+  emails:
+  - anand.rsoni2001@gmail.com
