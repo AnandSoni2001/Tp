@@ -38,6 +38,9 @@ with st.form("My"):
     submit_button = st.form_submit_button(label='Submit')
     
 if submit_button:
+    updates = {"value"=n+1}
+    db1.update(updates, "b2viowg703j2")
+
     st.metric(label="Total", value=(kundan+chijat))
     db.put({"Issue Date" : date_time,
                 "Receive Date" : date_time_1,
