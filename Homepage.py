@@ -38,13 +38,16 @@ if authentication_status:
     st.write('\n')
     number = st.number_input('Search by Job Number', step=1)
     
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     
     with col1:
         x = st.button('Search')
     
     with col2:
         y = st.button('Delete')
+        
+    with col3:
+        z = st.button('Update')
     
     if x:
         for i in all_items:
@@ -56,8 +59,11 @@ if authentication_status:
         st.write('This button is under work !')
         #db.delete(key)
     
+    if z:
+        st.write('This button is under work !')
+        
     st.write('\n')
-    y = st.button('View all data !')
+    y = st.button('\nView all data !')
     if y:
         # fetch until last is 'None'
         while res.last:
