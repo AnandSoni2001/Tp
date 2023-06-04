@@ -38,7 +38,7 @@ if authentication_status:
     st.write('\n')
     number = st.number_input('Search by Job Number', step=1)
     
-    col1, col2 = st.columns(3)
+    col1, col2 = st.columns(2)
     
     with col1:
         x = st.button('Search')
