@@ -50,7 +50,7 @@ if submit_button:
                 "Pahad Weight" : pahad,
                 "Gross Weight" : gross,
                 "Kundan Weight" : kundan,
-                "Chijat Weight" : chijat
+                "Chijat Weight" : chijat,
                 "Total Weight" : total})
     st.write('Data has been submitted') 
     st.metric(label="Total Weight", value=total)
