@@ -33,8 +33,8 @@ if authentication_status:
     db = deta.Base("Jewel")
     
     st.write('\n')
-    number = st.number_input('Search by Job Number')
-    st.write('The current number is ', number)
+    number = st.number_input('Search by Job Number', step=1)
+    st.write('The job number : ', number)
     
     st.write('\n')
     y = st.button('View all data !')
