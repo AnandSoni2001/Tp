@@ -25,7 +25,7 @@ authenticator = stauth.Authenticate(
 name, authentication_status, username = authenticator.login('Login', 'main')
 
 if authentication_status:
-    authenticator.logout('Logout', 'main', key='unique_key')
+    authenticator.logout('Logout', 'sidebar', key='unique_key')
     st.write(f'Welcome *{name}*')
     st.title("# Welcome to your website 👋")
 elif authentication_status is False:
