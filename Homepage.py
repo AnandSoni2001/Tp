@@ -26,8 +26,8 @@ name, authentication_status, username = authenticator.login('Login', 'main')
 
 if authentication_status:
     authenticator.logout('Logout', 'sidebar', key='unique_key')
-    st.write(f'Welcome *{name}*')
-    st.title("# Welcome to your website 👋")
+    st.write(f'Hello *{name}*')
+    st.title("Welcome to your website 👋")
 elif authentication_status is False:
     st.error('Username/password is incorrect')
 elif authentication_status is None:
