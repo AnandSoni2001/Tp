@@ -37,12 +37,23 @@ if authentication_status:
     
     st.write('\n')
     number = st.number_input('Search by Job Number', step=1)
-    x = st.button('Search')
+    
+    col1, col2 = st.columns(3)
+    
+    with col1:
+        x = st.button('Search')
+    
+    with col2:
+        y = st.button('Delete')
     
     if x:
         for i in all_items:
             if i['Job Number'] == number:
                 st.write(i)
+                key = i['key']
+                
+    if y:
+        db.delete(key)
     
     st.write('\n')
     y = st.button('View all data !')
