@@ -36,8 +36,6 @@ elif authentication_status is None:
 
 deta = Deta(st.secrets["key_number"])
 db = deta.Base("Jewel")
-
-st.set_page_config(page_title="See Data", page_icon="⬇︎")      
         
 y = st.button('Press this button')
 if y:
