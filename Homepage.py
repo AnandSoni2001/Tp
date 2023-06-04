@@ -53,7 +53,8 @@ if authentication_status:
                 key = i['key']
                 
     if y:
-        db.delete(key)
+        st.write('This button is under work !")
+        #db.delete(key)
     
     st.write('\n')
     y = st.button('View all data !')
