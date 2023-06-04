@@ -31,11 +31,12 @@ if authentication_status:
     
     deta = Deta(st.secrets["key_number"])
     db = deta.Base("Jewel")
-    st.write('To view data press the button below')
     
+    st.write('\n')
     number = st.number_input('Search by Job Number')
     st.write('The current number is ', number)
     
+    st.write('\n')
     y = st.button('View all data !')
     if y:
         res = db.fetch()
