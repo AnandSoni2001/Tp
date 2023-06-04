@@ -32,16 +32,21 @@ if authentication_status:
     deta = Deta(st.secrets["key_number"])
     db = deta.Base("Jewel")
     
+    res = db.fetch()
+    all_items = res.items
+    
     st.write('\n')
     number = st.number_input('Search by Job Number', step=1)
     x = st.button('Search')
     
+    if x:
+        for i in all_items:
+            if i['Job Number'] == number:
+                st.write(i)
+    
     st.write('\n')
     y = st.button('View all data !')
     if y:
-        res = db.fetch()
-        all_items = res.items
-
         # fetch until last is 'None'
         while res.last:
           res = db.fetch(last=res.last)
