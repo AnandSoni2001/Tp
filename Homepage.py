@@ -28,24 +28,27 @@ if authentication_status:
     authenticator.logout('Logout', 'sidebar', key='unique_key')
     st.write(f'Hello *{name}*')
     st.title("Welcome to your website 👋")
+    
+    deta = Deta(st.secrets["key_number"])
+    db = deta.Base("Jewel")
+    st.write('To view data press the button below')
+    y = st.button('View Data !')
+    if y:
+        res = db.fetch()
+        all_items = res.items
+
+        # fetch until last is 'None'
+        while res.last:
+          res = db.fetch(last=res.last)
+          all_items += res.items
+
+        for x in all_items:
+            st.write(x)
+            
 elif authentication_status is False:
     st.error('Username/password is incorrect')
 elif authentication_status is None:
     st.warning('Please enter your username and password')
 
 
-deta = Deta(st.secrets["key_number"])
-db = deta.Base("Jewel")
-        
-y = st.button('Press this button')
-if y:
-    res = db.fetch()
-    all_items = res.items
 
-    # fetch until last is 'None'
-    while res.last:
-      res = db.fetch(last=res.last)
-      all_items += res.items
-
-    for x in all_items:
-        st.write(x)
