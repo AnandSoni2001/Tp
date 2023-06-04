@@ -49,11 +49,16 @@ if authentication_status:
     with col3:
         z = st.button('Update')
     
+    flag = 0
     if x:
         for i in all_items:
             if i['Job Number'] == number:
+                flag = 1
                 st.write(i)
                 key = i['key']
+                
+         if flag == 0:
+            st.write('Data not found')
                 
     if y:
         st.write('This button is under work !')
