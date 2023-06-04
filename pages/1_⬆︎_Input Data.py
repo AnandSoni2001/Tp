@@ -31,7 +31,7 @@ with st.form("My"):
     with col2:
         d1 = st.date_input("Receive Date", datetime.date(y, m, day))
         jadiyaname = st.text_input('Jadiya Name', '')
-        jobn = st.number_input('Job number',value=max, step=1)
+        jobn = st.number_input('Job number',value=max+1, step=1)
         gross = st.number_input('Gross Weight')
         chijat = st.number_input('Chijat')
 
@@ -41,9 +41,6 @@ with st.form("My"):
     submit_button = st.form_submit_button(label='Submit')
     
 if submit_button:
-    updates = {"value" : n+1}
-    db1.update(updates, "b2viowg703j2")
-      
     db.put({"Issue Date" : date_time,
                 "Receive Date" : date_time_1,
                 "Item" : item,
