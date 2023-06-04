@@ -7,9 +7,12 @@ st.set_page_config(page_title="Enter Data", page_icon="📈")
 
 deta = Deta(st.secrets["key_number"])
 db = deta.Base("Jewel")
-db1 = deta.Base("Counter")
 
-n = db1.fetch().items[0]["value"]
+n = db.fetch().items
+max = 0
+for x in n:
+      if x["Job Number"]>max :
+            max = x["Job Number"]
 
 today = datetime.date.today()
 day=int(today.strftime("%d"))
@@ -28,7 +31,7 @@ with st.form("My"):
     with col2:
         d1 = st.date_input("Receive Date", datetime.date(y, m, day))
         jadiyaname = st.text_input('Jadiya Name', '')
-        jobn = st.number_input('Job number',value=n, step=1)
+        jobn = st.number_input('Job number',value=max, step=1)
         gross = st.number_input('Gross Weight')
         chijat = st.number_input('Chijat')
 
