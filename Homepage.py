@@ -63,7 +63,7 @@ if authentication_status:
         flag = 0
         #st.write('This button is under work !')        
         conf = st.text_input('Are you sure ? Type "YES" to confirm !')
-        
+        st.write('Okay great', conf)
         if conf == 'YES' :
             st.write('Okay great', conf)
             #for i in all_items:
