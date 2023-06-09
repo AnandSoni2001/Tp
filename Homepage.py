@@ -95,9 +95,7 @@ if authentication_status:
             st.write('Data not found')  
     
     if a:
-        for x in all_items:
-            st.write(x)
-        df = pd.DataFrame(i, index=[1])
+        df = pd.DataFrame(all_items, index=[1])
         df_print = df.drop('key', axis=1)
         st.write(df_print)
         
