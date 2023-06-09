@@ -36,8 +36,8 @@ with st.form("My"):
         chijat = st.number_input('Chijat')
 
     total = kundan+chijat
-    date_time = d.strftime("%m/%d/%Y)
-    date_time_1 = d1.strftime("%m/%d/%Y)
+    date_time = d.strftime("%m/%d/%Y")
+    date_time_1 = d1.strftime("%m/%d/%Y")
     submit_button = st.form_submit_button(label='Submit')
     
 if submit_button:
