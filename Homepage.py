@@ -58,8 +58,8 @@ if authentication_status:
             st.write('Okay great')
             for i in all_items:
                 if i['Job Number'] == number:
-                    st.write(type(i['key']))
-                    #db.delete(i['key'])
+                    keydata = str(i['key'])
+                    db.delete(keydata)
 
             if flag == 0:
                 st.write('Data not found')  
