@@ -96,7 +96,8 @@ if authentication_status:
     
     if a:
         st.write(all_items)
-        st.write(type(all_items))
+        df = pd.DataFrame(data)
+        st.write(df)
             
 elif authentication_status is False:
     st.error('Username/password is incorrect')
