@@ -53,10 +53,10 @@ if authentication_status:
     
     if button("Delete", key='1'):
         flag = 0   
-        if button("I Agree", key='2'):
+        if button("Confirm delete", key='2'):
             for i in all_items:
                 if i['Job Number'] == number:
-                    key = 1
+                    flag = 1
                     keydata = str(i['key'])
                     db.delete(keydata)
                     st.write('Data deleted')
