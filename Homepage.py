@@ -59,7 +59,7 @@ if authentication_status:
             if i['Job Number'] == number:
                 flag = 1
                 st.write(i)
-                df = pd.DataFrame.from_dict(i)
+                df = pd.DataFrame.from_dict(i, ,index=[0])
                 #st.write(df)
                 #df.to_csv("new.csv", index = False)
 
