@@ -64,9 +64,6 @@ if authentication_status:
                 st.write('Data not found')
         
         #db.delete(key)
-    
-    if z:
-        st.write('This button is under work !')
         
     st.write('\n')
     y = st.button('\nView all data !')
