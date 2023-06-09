@@ -49,19 +49,30 @@ if authentication_status:
     with col3:
         z = st.button('Update')
     
-    flag = 0
     if x:
+        flag = 0
         for i in all_items:
             if i['Job Number'] == number:
                 flag = 1
                 st.write(i)
-                key = i['key']
                 
         if flag == 0:
             st.write('Data not found')
-                
+    
     if y:
-        st.write('This button is under work !')
+        flag = 0
+        st.write('This button is under work !')        
+        conf = st.text_input('Are you sure ? Type "YES" to confirm !')
+        if conf == 'YES' :
+            for i in all_items:
+                if i['Job Number'] == number:
+                    st.write(i)
+                    keynew = i['key']
+                    st.write(keynew)
+
+            if flag == 0:
+                st.write('Data not found')
+        
         #db.delete(key)
     
     if z:
