@@ -61,7 +61,7 @@ if authentication_status:
                 st.write(i)
                 df = pd.DataFrame(i)
                 st.write(df)
-                df.to_csv("new.csv", index = False)
+                #df.to_csv("new.csv", index = False)
 
         if flag == 0:
             st.write('Data not found')
