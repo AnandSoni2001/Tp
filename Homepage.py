@@ -58,10 +58,26 @@ if authentication_status:
         for i in all_items:
             if i['Job Number'] == number:
                 flag = 1
-                st.write(i)
-                df = pd.DataFrame(i, index=[0])
-                st.write(df)
+                #st.write(i)
+                
+                df = pd.DataFrame(i, index=[1])
+                #st.write(df)
                 #df.to_csv("new.csv", index = False)
+                
+                df_print = df.drop('key', axis=1)
+                st.write(df_print)
+                
+                def convert_df(df):
+                    return df.to_csv().encode('utf-8')
+
+                csv = convert_df(df_print)
+
+                st.download_button(
+                    label="Download data as CSV",
+                    data=csv,
+                    file_name='large_df.csv',
+                    mime='text/csv',
+                )
 
         if flag == 0:
             st.write('Data not found')
@@ -81,6 +97,21 @@ if authentication_status:
     if a:
         for x in all_items:
             st.write(x)
+        df = pd.DataFrame(i, index=[1])
+        df_print = df.drop('key', axis=1)
+        st.write(df_print)
+        
+        def convert_df(df):
+            return df.to_csv().encode('utf-8')
+
+        csv = convert_df(df_print)
+
+        st.download_button(
+            label="Download data as CSV",
+            data=csv,
+            file_name='large_df.csv',
+            mime='text/csv',
+        )
             
 elif authentication_status is False:
     st.error('Username/password is incorrect')
