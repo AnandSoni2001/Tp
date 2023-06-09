@@ -49,6 +49,9 @@ if authentication_status:
         
     with col3:
         z = st.button('Update')
+        
+    with col4:
+        a = st.button('View all data !')
     
     if x:
         flag = 0
@@ -71,11 +74,8 @@ if authentication_status:
 
         if flag == 0:
             st.write('Data not found')  
-        
-        
-    st.write('\n')
-    y = st.button('\nView all data !')
-    if y:
+    
+    if a:
         # fetch until last is 'None'
         while res.last:
           res = db.fetch(last=res.last)
