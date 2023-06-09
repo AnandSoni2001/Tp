@@ -66,12 +66,12 @@ if authentication_status:
         
         if conf == 'YES' :
             st.write('Okay great', conf)
-            for i in all_items:
-                if i['Job Number'] == number:
-                    st.write(i)
+            #for i in all_items:
+            #    if i['Job Number'] == number:
+            #        st.write(i)
 
-            if flag == 0:
-                st.write('Data not found')
+            #if flag == 0:
+            #    st.write('Data not found')
         
         #db.delete(key)
     
