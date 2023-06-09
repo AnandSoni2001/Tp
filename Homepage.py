@@ -58,12 +58,12 @@ if authentication_status:
             st.write('Okay great')
             for i in all_items:
                 if i['Job Number'] == number:
-                    st.write(i['key'])
+                    st.write(type(i['key']))
+                    #db.delete(i['key'])
 
             if flag == 0:
-                st.write('Data not found')
+                st.write('Data not found')  
         
-        #db.delete(key)
         
     st.write('\n')
     y = st.button('\nView all data !')
