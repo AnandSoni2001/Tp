@@ -60,7 +60,7 @@ if authentication_status:
                 flag = 1
                 st.write(i)
                 
-        df = pd.DataFrame(i['Job Number'])
+        df = pd.DataFrame(i)
         
         def convert_df(df):
             # IMPORTANT: Cache the conversion to prevent computation on every rerun
