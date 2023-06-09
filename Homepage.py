@@ -5,7 +5,6 @@ from yaml.loader import SafeLoader
 import pandas as pd
 import datetime
 from deta import Deta
-from streamlit_extras.stateful_button import button
 
 st.set_page_config(
     page_title="Jewel",
@@ -37,9 +36,19 @@ if authentication_status:
     all_items = res.items
     
     st.write('\n')
-    number = st.number_input('Search by Job Number', step=1)
+    number = st.number_input('Enter Job Number', step=1)
     
-    x = st.button('Search')
+    st.write('Enter operation :')
+    
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        x = st.button('Search')
+    
+    with col2:
+        y = st.button('Delete')
+        
+    with col3:
+        z = st.button('Search')
     
     if x:
         flag = 0
@@ -51,18 +60,17 @@ if authentication_status:
         if flag == 0:
             st.write('Data not found')
     
-    if button("Delete", key='1'):
+    if y:
         flag = 0   
-        if button("Confirm delete", key='2'):
-            for i in all_items:
-                if i['Job Number'] == number:
-                    flag = 1
-                    keydata = str(i['key'])
-                    db.delete(keydata)
-                    st.write('Data deleted')
+        for i in all_items:
+            if i['Job Number'] == number:
+                flag = 1
+                keydata = str(i['key'])
+                db.delete(keydata)
+                st.write('Data deleted')
 
-            if flag == 0:
-                st.write('Data not found')  
+        if flag == 0:
+            st.write('Data not found')  
         
         
     st.write('\n')
