@@ -96,7 +96,7 @@ if authentication_status:
     
     if a:
         st.write(all_items)
-        df = pd.DataFrame(data)
+        df = pd.DataFrame(all_items)
         st.write(df)
             
 elif authentication_status is False:
