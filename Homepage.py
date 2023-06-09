@@ -52,6 +52,9 @@ if authentication_status:
         
     with col4:
         a = st.button('View all data !')
+        
+    def convert_df(df):
+        return df.to_csv().encode('utf-8')
     
     if x:
         flag = 0
@@ -61,21 +64,15 @@ if authentication_status:
                 #st.write(i)
                 
                 df = pd.DataFrame(i, index=[1])
-                #st.write(df)
-                #df.to_csv("new.csv", index = False)
-                
                 df_print = df.drop('key', axis=1)
                 st.write(df_print)
                 
-                def convert_df(df):
-                    return df.to_csv().encode('utf-8')
-
                 csv = convert_df(df_print)
 
                 st.download_button(
-                    label="Download data as CSV",
+                    label="Download data",
                     data=csv,
-                    file_name='large_df.csv',
+                    file_name='data.csv',
                     mime='text/csv',
                 )
 
@@ -95,9 +92,20 @@ if authentication_status:
             st.write('Data not found')  
     
     if a:
-        st.write(all_items)
         df = pd.DataFrame(all_items)
         st.write(df)
+        
+        df_print = df.drop('key', axis=1)
+        st.write(df_print)
+
+        csv = convert_df(df_print)
+
+        st.download_button(
+            label="Download all data",
+            data=csv,
+            file_name='data.csv',
+            mime='text/csv',
+        )
             
 elif authentication_status is False:
     st.error('Username/password is incorrect')
