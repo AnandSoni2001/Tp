@@ -51,10 +51,9 @@ if authentication_status:
         if flag == 0:
             st.write('Data not found')
     
-    if button("Delete", key="button1"):
+    if button("Delete"):
         flag = 0   
-        if button("I Agree", key="button2"):
-            st.write('Okay great')
+        if button("I Agree"):
             for i in all_items:
                 if i['Job Number'] == number:
                     key = 1
