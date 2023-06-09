@@ -64,6 +64,7 @@ if authentication_status:
         st.write('This button is under work !')        
         conf = st.text_input('Are you sure ? Type "YES" to confirm !')
         if conf == 'YES' :
+            st.write('Okay great', conf)
             for i in all_items:
                 if i['Job Number'] == number:
                     st.write(i)
