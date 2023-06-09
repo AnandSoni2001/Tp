@@ -89,11 +89,13 @@ if authentication_status:
                 st.write('Data deleted')
 
         if flag == 0:
-            st.write('Data not found')  
+            st.write('Data not found') 
+            
+    if z:
+        st.write('Key under construction!')
     
     if a:
         df = pd.DataFrame(all_items)
-        st.write(df)
         
         df_print = df.drop('key', axis=1)
         st.write(df_print)
