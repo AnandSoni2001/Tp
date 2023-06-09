@@ -52,14 +52,15 @@ if authentication_status:
             st.write('Data not found')
     
     if button("Delete", key="button1"):
-        flag = 0
-        #st.write('This button is under work !')        
+        flag = 0   
         if button("I Agree", key="button2"):
             st.write('Okay great')
             for i in all_items:
                 if i['Job Number'] == number:
+                    key = 1
                     keydata = str(i['key'])
                     db.delete(keydata)
+                    st.write('Data deleted')
 
             if flag == 0:
                 st.write('Data not found')  
