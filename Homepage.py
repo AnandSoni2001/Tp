@@ -58,9 +58,9 @@ if authentication_status:
         for i in all_items:
             if i['Job Number'] == number:
                 flag = 1
-                st.write(i)
-                df = pd.DataFrame(i)
-                st.write(df)
+                st.write(type(i))
+                #df = pd.DataFrame(i)
+                #st.write(df)
                 #df.to_csv("new.csv", index = False)
 
         if flag == 0:
