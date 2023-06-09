@@ -60,7 +60,9 @@ if authentication_status:
                 flag = 1
                 st.write(i)
                 
-        def convert_df(i['Job Number']):
+        df = pd.DataFrame(i['Job Number'])
+        
+        def convert_df(df):
             # IMPORTANT: Cache the conversion to prevent computation on every rerun
             return df.to_csv().encode('utf-8')
 
@@ -75,9 +77,7 @@ if authentication_status:
                 
         if flag == 0:
             st.write('Data not found')
-            
-        
-    
+
     if y:
         flag = 0   
         for i in all_items:
