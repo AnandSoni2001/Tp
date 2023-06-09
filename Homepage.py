@@ -48,7 +48,7 @@ if authentication_status:
         y = st.button('Delete')
         
     with col3:
-        z = st.button('Search')
+        z = st.button('Update')
     
     if x:
         flag = 0
