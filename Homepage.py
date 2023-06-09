@@ -59,8 +59,9 @@ if authentication_status:
             if i['Job Number'] == number:
                 flag = 1
                 st.write(i)
-                df = pd.DataFrame.from_dict(i)
-                st.write(df)
+                st.write(type(number))
+                #df = pd.DataFrame.from_dict(i)
+                #st.write(df)
                 #df.to_csv("new.csv", index = False)
 
         if flag == 0:
@@ -79,11 +80,6 @@ if authentication_status:
             st.write('Data not found')  
     
     if a:
-        # fetch until last is 'None'
-        while res.last:
-          res = db.fetch(last=res.last)
-          all_items += res.items
-
         for x in all_items:
             st.write(x)
             
