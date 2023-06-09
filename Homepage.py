@@ -39,16 +39,7 @@ if authentication_status:
     st.write('\n')
     number = st.number_input('Search by Job Number', step=1)
     
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        x = st.button('Search')
-    
-    with col2:
-        y = st.button('Delete')
-        
-    with col3:
-        z = st.button('Update')
+    x = st.button('Search')
     
     if x:
         flag = 0
@@ -60,19 +51,17 @@ if authentication_status:
         if flag == 0:
             st.write('Data not found')
     
-    if y:
+    if button("Delete", key="button1"):
         flag = 0
         #st.write('This button is under work !')        
-        agree = st.checkbox('I agree')
-        
-        if button("I Agree", key="button1"):
+        if button("I Agree", key="button2"):
             st.write('Okay great')
-            #for i in all_items:
-            #    if i['Job Number'] == number:
-            #        st.write(i)
+            for i in all_items:
+                if i['Job Number'] == number:
+                    st.write(i['key'])
 
-            #if flag == 0:
-            #    st.write('Data not found')
+            if flag == 0:
+                st.write('Data not found')
         
         #db.delete(key)
     
