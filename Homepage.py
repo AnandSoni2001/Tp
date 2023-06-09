@@ -95,19 +95,23 @@ if authentication_status:
         st.write('Key under construction!')
     
     if a:
-        df = pd.DataFrame(all_items)
-        
-        df_print = df.drop('key', axis=1)
-        st.write(df_print)
+        try:
+            df = pd.DataFrame(all_items)
 
-        csv = convert_df(df_print)
+            df_print = df.drop('key', axis=1)
+            st.write(df_print)
 
-        st.download_button(
-            label="Download all data",
-            data=csv,
-            file_name='data.csv',
-            mime='text/csv',
-        )
+            csv = convert_df(df_print)
+
+            st.download_button(
+                label="Download all data",
+                data=csv,
+                file_name='data.csv',
+                mime='text/csv',
+            )
+
+        except:
+            st.write('No data to display')
             
 elif authentication_status is False:
     st.error('Username/password is incorrect')
