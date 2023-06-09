@@ -60,8 +60,23 @@ if authentication_status:
                 flag = 1
                 st.write(i)
                 
+        def convert_df(i['Job Number']):
+            # IMPORTANT: Cache the conversion to prevent computation on every rerun
+            return df.to_csv().encode('utf-8')
+
+        csv = convert_df(my_large_df)
+
+        st.download_button(
+            label="Download data as CSV",
+            data=csv,
+            file_name='large_df.csv',
+            mime='text/csv',
+        )
+                
         if flag == 0:
             st.write('Data not found')
+            
+        
     
     if y:
         flag = 0   
