@@ -5,6 +5,7 @@ from yaml.loader import SafeLoader
 import pandas as pd
 import datetime
 from deta import Deta
+from streamlit_extras.stateful_button import button
 
 st.set_page_config(
     page_title="Jewel",
@@ -63,7 +64,8 @@ if authentication_status:
         flag = 0
         #st.write('This button is under work !')        
         agree = st.checkbox('I agree')
-        if agree :
+        
+        if button("I Agree", key="button1"):
             st.write('Okay great')
             #for i in all_items:
             #    if i['Job Number'] == number:
