@@ -95,21 +95,8 @@ if authentication_status:
             st.write('Data not found')  
     
     if a:
-        df = pd.DataFrame(all_items, index=[1])
-        df_print = df.drop('key', axis=1)
-        st.write(df_print)
-        
-        def convert_df(df):
-            return df.to_csv().encode('utf-8')
-
-        csv = convert_df(df_print)
-
-        st.download_button(
-            label="Download data as CSV",
-            data=csv,
-            file_name='large_df.csv',
-            mime='text/csv',
-        )
+        st.write(all_items)
+        st.write(type(all_items))
             
 elif authentication_status is False:
     st.error('Username/password is incorrect')
