@@ -61,15 +61,14 @@ if authentication_status:
     
     if y:
         flag = 0
-        st.write('This button is under work !')        
+        #st.write('This button is under work !')        
         conf = st.text_input('Are you sure ? Type "YES" to confirm !')
+        
         if conf == 'YES' :
             st.write('Okay great', conf)
             for i in all_items:
                 if i['Job Number'] == number:
                     st.write(i)
-                    keynew = i['key']
-                    st.write(keynew)
 
             if flag == 0:
                 st.write('Data not found')
