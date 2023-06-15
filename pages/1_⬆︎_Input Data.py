@@ -72,6 +72,6 @@ if submit_button:
                 "Chijat Weight" : chijat,
                 "Total Weight" : total})
     for a in range(num_rows):
-      db.put({"f'Stone {a}":f'stone{a}, "Stone {a} PCs":f'input_amount{row}})     
+      db.put({"f'Stone {a}":f'stone{a}, "f'Stone {a} PCs":f'input_amount{row}})     
     st.write('Data has been submitted') 
     st.metric(label="Total Weight", value=total)
