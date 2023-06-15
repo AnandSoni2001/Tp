@@ -33,7 +33,7 @@ with st.form("My"):
     col1, col2 = st.columns(2)
     with col1:
         d = st.date_input("Issue Date", datetime.date(y, m, day))
-        item = st.text_input('Item', items)
+        item = st.text_input('Item', '')
         ghatpcs = st.number_input('Ghat PCs', step=1)
         pahad = st.number_input('Pahad Weight')
         kundan = st.number_input('Kundan Weight')
