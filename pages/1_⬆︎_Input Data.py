@@ -16,6 +16,7 @@ stones = []
 
 for i in n1:
       item = i['Stone name']
+      st.write(item)
       stones.append(item)
       
 st.write(stones)
