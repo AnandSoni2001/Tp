@@ -12,9 +12,11 @@ db1 = deta.Base("Stone")
 n = db.fetch().items
 n1 = db1.fetch().items
 
+stones = []
+
 for i in n1:
       item = i['Stone name']
-      st.write(item)
+      stones.append(item)
 
 max = 0
 for x in n:
@@ -34,7 +36,7 @@ with st.form("My"):
         ghatpcs = st.number_input('Ghat PCs', step=1)
         pahad = st.number_input('Pahad Weight')
         kundan = st.number_input('Kundan Weight')
-        stone = st.text_input('Stone', new)
+        stone = st.text_input('Stone', stones)
 
     with col2:
         d1 = st.date_input("Receive Date", datetime.date(y, m, day))
