@@ -2,7 +2,6 @@ import pandas as pd
 import streamlit as st
 import datetime
 from deta import Deta
-import numpy as np
 
 st.set_page_config(page_title="Enter Data", page_icon="📈")
 
@@ -61,8 +60,7 @@ with st.form("My"):
     total = kundan+chijat
     date_time = d.strftime("%m/%d/%Y")
     submit_button = st.form_submit_button(label='Submit')
-
-    arr = np.array((stone, pc))
+    new = [list(x) for x in zip(stone, pc)]
     
 if submit_button:
     db.put({"Issue Date" : date_time,
@@ -76,7 +74,7 @@ if submit_button:
                 "Kundan Weight" : kundan,
                 "Chijat Weight" : chijat,
                 "Total Weight" : total,
-            "Stone and PCs": arr,
+            "Stone and PCs": new,
            })
  
     st.write('Data has been submitted') 
