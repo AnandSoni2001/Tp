@@ -18,7 +18,7 @@ st.write(stones)
 
 edited_df = st.experimental_data_editor(df)
 favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
-st.markdown(f"Your favorite command is **{favorite_command}** 🎈,num_rows=”dynamic”)
+st.markdown(f"Your favorite command is **{favorite_command}** 🎈",num_rows='dynamic')
 
 max = 0
 for x in n:
