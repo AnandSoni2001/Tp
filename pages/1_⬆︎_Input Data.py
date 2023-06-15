@@ -2,6 +2,8 @@ import pandas as pd
 import streamlit as st
 import datetime
 from deta import Deta
+from typing import List
+from pydantic import BaseModel
 
 st.set_page_config(page_title="Enter Data", page_icon="📈")
 
@@ -15,6 +17,13 @@ n1 = db1.fetch().items
 df = pd.DataFrame(n1)
 stones = df['Stone name'].values.tolist()
 st.write(stones)
+
+class MyCustomData(BaseModel):
+    name: str
+    age: int
+    friends: List[int]
+
+st.get_input(MyCustomData)
 
 max = 0
 for x in n:
