@@ -18,7 +18,7 @@ for i in n1:
       new.append(i['Stone name'])
 
 #resultList = list(n1.keys())
-#st.write(resultList)
+st.write(new)
 
 max = 0
 for x in n:
@@ -38,7 +38,7 @@ with st.form("My"):
         ghatpcs = st.number_input('Ghat PCs', step=1)
         pahad = st.number_input('Pahad Weight')
         kundan = st.number_input('Kundan Weight')
-        stone = st.text_input('Stone', n1['Stone name'].values)
+        stone = st.text_input('Stone', new)
 
     with col2:
         d1 = st.date_input("Receive Date", datetime.date(y, m, day))
