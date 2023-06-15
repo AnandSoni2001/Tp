@@ -19,7 +19,7 @@ for i in n1:
       st.write(item)
       stones.append(item)
       
-st.write(stones)
+print(stones)
 st.write(type(stones))
 
 max = 0
