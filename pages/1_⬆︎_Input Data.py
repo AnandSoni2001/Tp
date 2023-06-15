@@ -17,6 +17,8 @@ stones = []
 for i in n1:
       item = i['Stone name']
       stones.append(item)
+      
+st.write(stones)
 
 max = 0
 for x in n:
