@@ -27,7 +27,7 @@ m=int(today.strftime("%m"))
 y=int(today.strftime("%Y"))
 
 # a selection for the user to specify the number of rows
-num_rows = st.slider('Number of Rows', min_value=1,max_value=10,value=1)
+num_rows = st.slider('Number of different stones', min_value=1,max_value=10,value=1)
       
 with st.form("My"):
     col1, col2 = st.columns(2)
