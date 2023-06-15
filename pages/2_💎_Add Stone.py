@@ -17,7 +17,7 @@ with st.form("New"):
 if submit_button:
   flag = 0  
   for i in all_items:
-    if upper(i['Stone name']) == upper(stone):
+    if i['Stone name'].upper() == stone.upper():
         st.write('Stone already present')
         flag = 1        
   if flag == 0:
