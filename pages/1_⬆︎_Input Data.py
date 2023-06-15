@@ -50,7 +50,6 @@ with st.form("My"):
               st.text_input('Stone', key=f'stone{row}')
           with col2:
               st.number_input('PCs', key=f'input_amount{row}')
-              stonepcs = st.number_input('Stone PCs', value=1, step=1)
             
     for r in range(num_rows):
       add_row(r)
