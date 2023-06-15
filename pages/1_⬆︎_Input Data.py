@@ -16,9 +16,6 @@ for i in n1:
       item = i['Stone name']
       st.write(item)
 
-#resultList = list(n1.keys())
-st.write(new)
-
 max = 0
 for x in n:
       if x["Job Number"]>max :
