@@ -16,9 +16,9 @@ df = pd.DataFrame(n1)
 stones = df['Stone name'].values.tolist()
 st.write(stones)
 
-edited_df = st.experimental_data_editor(df)
+edited_df = st.experimental_data_editor(df,num_rows='dynamic')
 favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
-st.markdown(f"Your favorite command is **{favorite_command}** 🎈",num_rows='dynamic')
+st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
 
 max = 0
 for x in n:
