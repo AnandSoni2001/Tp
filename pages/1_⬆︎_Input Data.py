@@ -49,7 +49,7 @@ with st.form("My"):
 
     def add_row(row):
           with col1:
-              stone[row] = st.selectbox('Stone', stones, key=f'stone{row}')
+              stone[row] = st.selectbox('Stones', stones, key=f'stone{row}')
           with col2:
               pc[row] = st.number_input('PCs', step=1, key=f'pcs{row}')
             
@@ -59,10 +59,6 @@ with st.form("My"):
     total = kundan+chijat
     date_time = d.strftime("%m/%d/%Y")
     submit_button = st.form_submit_button(label='Submit')
-
-    lst3 = []
-    for i, x in enumerate(stone):
-      lst3.append([x, pc[i]])
     
 if submit_button:
     db.put({"Issue Date" : date_time,
@@ -76,7 +72,7 @@ if submit_button:
                 "Kundan Weight" : kundan,
                 "Chijat Weight" : chijat,
                 "Total Weight" : total,
-            "Stone and PCs": lst3,
+            "Stones": stone, "PCs":pc,
            })
  
     st.write('Data has been submitted') 
