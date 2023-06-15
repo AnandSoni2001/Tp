@@ -11,7 +11,11 @@ db1 = deta.Base("Stone")
 
 n = db.fetch().items
 n1 = db1.fetch().items
-st.write(type(n1))
+
+new = []
+
+for i in n1:
+      new.append(i['Stone name'])
 
 #resultList = list(n1.keys())
 #st.write(resultList)
