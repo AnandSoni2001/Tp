@@ -59,14 +59,14 @@ if authentication_status:
     
     if x:
         flag = 0
-        st.header('Details')
-        c1, c2 = st.columns(2) 
+        st.header('Details') 
         
         for i in all_items:
             if i['Job Number'] == number:
                 flag = 1
                 
                 st.write('Job Number : ', str(i['Job Number']))
+                c1, c2 = st.columns(2)
                 
                 with c1:
                     st.write('Jadiya Name : ', str(i['Jadiya Name']))
