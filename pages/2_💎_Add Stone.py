@@ -6,6 +6,8 @@ st.set_page_config(page_title="Stone Data 💎", page_icon="")
 
 deta = Deta(st.secrets["key_number"])
 db = deta.Base("Stone")
+res = db.fetch()
+all_items = res.items
 
 with st.form("My"):
   stone = st.text_input('Add new stone', 'Enter name')
@@ -26,8 +28,6 @@ if submit_button:
   
 a = st.button('View Stone')  
 if a:
-  res = db.fetch()
-  all_items = res.items
   try:
     for i in all_items:
       df = pd.DataFrame(i, index=[1])
