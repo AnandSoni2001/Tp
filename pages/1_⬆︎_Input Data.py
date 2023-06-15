@@ -44,15 +44,19 @@ with st.form("My"):
         jobn = st.number_input('Job number',value=max+1, step=1)
         gross = st.number_input('Gross Weight')
         chijat = st.number_input('Chijat')
-            
+    
+    stones = [] 
+      
     def add_row(row):
           with col1:
-              f'stone{row}'=st.selectbox('Stone', stones)
+              stone = st.selectbox('Stone', stones, key=f'stone{row}')
           with col2:
-              f'pcs{row}'=st.number_input('PCs', step=1)
+              pc = st.number_input('PCs', step=1, key=f'pcs{row}')
             
     for r in range(num_rows):
       add_row(r)
+      stones.append(stone)
+      pcs.append(pc)
 
     total = kundan+chijat
     date_time = d.strftime("%m/%d/%Y")
@@ -69,11 +73,9 @@ if submit_button:
                 "Gross Weight" : gross,
                 "Kundan Weight" : kundan,
                 "Chijat Weight" : chijat,
-                "Total Weight" : total
+                "Total Weight" : total,
+            "Stone": stones, "PCs" : pcs,
            })
-    for a in range(num_rows):
-      db.put({f'Stone {a}': f'stone{a}', 
-              f'Stone {a} PCs': f'pcs{a}'
-             })     
+ 
     st.write('Data has been submitted') 
     st.metric(label="Total Weight", value=total)
