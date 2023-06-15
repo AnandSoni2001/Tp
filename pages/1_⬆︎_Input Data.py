@@ -7,8 +7,11 @@ st.set_page_config(page_title="Enter Data", page_icon="📈")
 
 deta = Deta(st.secrets["key_number"])
 db = deta.Base("Jewel")
+db1 = deta.Base("Stone")
 
 n = db.fetch().items
+n1 = db1.fetch().items
+
 max = 0
 for x in n:
       if x["Job Number"]>max :
@@ -27,6 +30,7 @@ with st.form("My"):
         ghatpcs = st.number_input('Ghat PCs', step=1)
         pahad = st.number_input('Pahad Weight')
         kundan = st.number_input('Kundan Weight')
+        stone = st.text_input('Stone', n1.values)
 
     with col2:
         d1 = st.date_input("Receive Date", datetime.date(y, m, day))
@@ -34,6 +38,7 @@ with st.form("My"):
         jobn = st.number_input('Job number',value=max+1, step=1)
         gross = st.number_input('Gross Weight')
         chijat = st.number_input('Chijat')
+        stonepcs = st.number_input('Stone PCs', value=1, step=1)
 
     total = kundan+chijat
     date_time = d.strftime("%m/%d/%Y")
