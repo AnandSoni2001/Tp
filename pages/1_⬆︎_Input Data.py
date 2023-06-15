@@ -19,6 +19,7 @@ for i in n1:
       stones.append(item)
       
 st.write(stones)
+st.write(type(stones))
 
 max = 0
 for x in n:
