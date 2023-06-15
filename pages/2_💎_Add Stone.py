@@ -29,6 +29,3 @@ if a:
     for i in all_items:
       df = pd.DataFrame(i, index=[1])
       st.write(df_print)
-      
-  except:
-    st.write('No data to display')
