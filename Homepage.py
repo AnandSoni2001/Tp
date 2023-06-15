@@ -59,8 +59,8 @@ if authentication_status:
     
     if x:
         flag = 0
-        
-        c1, c2 = st.columns(3) 
+        st.header('Details')
+        c1, c2 = st.columns(2) 
         
         for i in all_items:
             if i['Job Number'] == number:
