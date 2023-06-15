@@ -47,7 +47,7 @@ with st.form("My"):
             
     def add_row(row):
           with col1:
-              st.selectbox('Stone', key=f'stone{row}', stones)
+              st.selectbox('Stone', stones, key=f'stone{row}')
           with col2:
               st.number_input('PCs', key=f'input_amount{row}')
             
