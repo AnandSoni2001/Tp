@@ -70,13 +70,13 @@ if authentication_status:
                     st.write('Job Number', str(i['Job Number']))
                     st.write('Issue Date', str(i['Issue Date']))
                     st.write('Amount', str(i['Amount']))
-                    st.write('Stones', i['Stones']))
+                    st.write('Stones', i['Stones'])
                 
                 with c2:
                     st.write('Kundan/Gold', str(i['Kundan/Gold']))
                     st.write('Jadiya Name', str(i['Jadiya Name']))
                     st.write('Ghat PCs', str(i['Ghat PCs']))
-                    st.write('PCs', i['PCs']))
+                    st.write('PCs', i['PCs'])
                 
                 with c3:
                     st.write('Pahad Weight', str(i['Pahad Weight']))
