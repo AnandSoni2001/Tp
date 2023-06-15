@@ -22,7 +22,7 @@ if a:
   try:
       df = pd.DataFrame(all_items)
 
-      df_print = df.drop('key', axis=1)
+      df_print = df.drop('key', axis=0)
       st.write(df_print)
 
       csv = convert_df(df_print)
