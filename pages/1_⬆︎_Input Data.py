@@ -45,18 +45,17 @@ with st.form("My"):
         gross = st.number_input('Gross Weight')
         chijat = st.number_input('Chijat')
     
-    stones = [] 
-      
+    stone = [] 
+    pc = []
+
     def add_row(row):
           with col1:
-              stone = st.selectbox('Stone', stones, key=f'stone{row}')
+              stone[row] = st.selectbox('Stone', stones, key=f'stone{row}')
           with col2:
-              pc = st.number_input('PCs', step=1, key=f'pcs{row}')
+              pc[row] = st.number_input('PCs', step=1, key=f'pcs{row}')
             
     for r in range(num_rows):
       add_row(r)
-      stones.append(stone)
-      pcs.append(pc)
 
     total = kundan+chijat
     date_time = d.strftime("%m/%d/%Y")
@@ -74,7 +73,7 @@ if submit_button:
                 "Kundan Weight" : kundan,
                 "Chijat Weight" : chijat,
                 "Total Weight" : total,
-            "Stone": stones, "PCs" : pcs,
+            "Stone": stone, "PCs" : pc,
            })
  
     st.write('Data has been submitted') 
