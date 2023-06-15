@@ -16,8 +16,6 @@ df = pd.DataFrame(n1)
 stones = df['Stone name'].values.tolist()
 st.write(stones)
 
-edited_df = st.experimental_data_editor(df['Stone name'],num_rows='dynamic')
-
 max = 0
 for x in n:
       if x["Job Number"]>max :
@@ -27,6 +25,12 @@ today = datetime.date.today()
 day=int(today.strftime("%d"))
 m=int(today.strftime("%m"))
 y=int(today.strftime("%Y"))
+
+# a selection for the user to specify the number of rows
+num_rows = st.slider('Number of Rows', min_value=1,max_value=10,value=1)
+
+for r in range(num_rows):
+    add_row(r)
       
 with st.form("My"):
     col1, col2 = st.columns(2)
@@ -36,7 +40,6 @@ with st.form("My"):
         ghatpcs = st.number_input('Ghat PCs', step=1)
         pahad = st.number_input('Pahad Weight')
         kundan = st.number_input('Kundan Weight')
-        stone = st.text_input('Stone', stones)
 
     with col2:
         d1 = st.date_input("Receive Date", datetime.date(y, m, day))
@@ -44,7 +47,13 @@ with st.form("My"):
         jobn = st.number_input('Job number',value=max+1, step=1)
         gross = st.number_input('Gross Weight')
         chijat = st.number_input('Chijat')
-        stonepcs = st.number_input('Stone PCs', value=1, step=1)
+            
+    def add_row(row):
+          with col1:
+              st.text_input('Expense', key=f'stone{row}')
+          with col2:
+              st.number_input('Amount', key=f'input_amount{row}')
+              stonepcs = st.number_input('Stone PCs', value=1, step=1)
 
     total = kundan+chijat
     date_time = d.strftime("%m/%d/%Y")
