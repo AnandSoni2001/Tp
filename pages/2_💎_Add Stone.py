@@ -27,5 +27,5 @@ a = st.button('View Stone')
 if a:
   try:
     for i in all_items:
-      df = pd.DataFrame(i, index=[1])
+      df = pd.DataFrame(i, index=[0])
       st.write(df)
