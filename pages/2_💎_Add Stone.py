@@ -26,10 +26,10 @@ if submit_button:
 a = st.button('View Stone')  
 if a:
   df = pd.DataFrame(all_items)
-  st.write(df_print)
+  st.write(df)
   csv = convert_df(df_print)
   st.download_button(
       label="Download all data",
       data=csv,
       file_name='data.csv',
-      mime='text/csv')
+      mime='text/csv',)
