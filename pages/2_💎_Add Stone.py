@@ -27,7 +27,7 @@ a = st.button('View Stone')
 if a:
   df = pd.DataFrame(all_items)
   st.write(df)
-  csv = convert_df(df_print)
+  csv = convert_df(df)
   st.download_button(
       label="Download all data",
       data=csv,
