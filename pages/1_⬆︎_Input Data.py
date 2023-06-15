@@ -12,15 +12,8 @@ db1 = deta.Base("Stone")
 n = db.fetch().items
 n1 = db1.fetch().items
 
-stones = []
-
-for i in n1:
-      item = i['Stone name']
-      st.write(item)
-      stones.append(item)
-      
-stones
-st.write(type(stones))
+df = pd.DataFrame(n1)
+st.write(df)
 
 max = 0
 for x in n:
