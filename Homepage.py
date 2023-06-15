@@ -60,32 +60,32 @@ if authentication_status:
     if x:
         flag = 0
         
-        c1, c2, c3 = st.columns(3) 
+        c1, c2 = st.columns(3) 
         
         for i in all_items:
             if i['Job Number'] == number:
                 flag = 1
                 
+                st.write('Job Number : ', str(i['Job Number']))
+                
                 with c1:
-                    st.write('Job Number : ', str(i['Job Number']))
+                    st.write('Jadiya Name : ', str(i['Jadiya Name']))
+                    st.write('Ghat PCs : ', str(i['Ghat PCs']))
                     st.write('Issue Date : ', str(i['Issue Date']))
                     st.write('Amount : ', str(i['Amount']))
+                    st.write('Gross Weight : ', str(i['Gross Weight']))
                     
                 
                 with c2:
                     st.write('Kundan/Gold : ', str(i['Kundan/Gold']))
-                    st.write('Jadiya Name : ', str(i['Jadiya Name']))
-                    st.write('Ghat PCs : ', str(i['Ghat PCs']))
-                    
-                with c3:
                     st.write('Pahad Weight : ', str(i['Pahad Weight']))
                     st.write('Kundan Weight : ', str(i['Kundan Weight']))
                     st.write('Chijat Weight : ', str(i['Chijat Weight']))
-                    st.write('Gross Weight : ', str(i['Gross Weight']))
-                    
+                    st.write('Total Weight : ', str(i['Total Weight']))
+
                 st.write('Stones : ', str(i['Stones']))
                 st.write('PCs : ', str(i['PCs']))
-                st.write('Total Weight : ', str(i['Total Weight']))
+                
 
         if flag == 0:
             st.write('Data not found')
