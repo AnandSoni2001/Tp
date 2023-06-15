@@ -12,10 +12,6 @@ db1 = deta.Base("Stone")
 n = db.fetch().items
 n1 = db1.fetch().items
 
-df = pd.DataFrame(n1)
-stones = df['Stone name'].values.tolist()
-st.write(stones)
-
 max = 0
 for x in n:
       if x["Job Number"]>max :
@@ -61,6 +57,7 @@ with st.form("My"):
     date_time = d.strftime("%m/%d/%Y")
     submit_button = st.form_submit_button(label='Submit')
 
+    lst3 = []
     for i, x in enumerate(stone):
       lst3.append([x, pc[i]])
     
