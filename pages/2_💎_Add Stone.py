@@ -33,6 +33,6 @@ if a:
           file_name='data.csv',
           mime='text/csv',
       )
-
-  except:
+      
+   except:
       st.write('No data to display')
