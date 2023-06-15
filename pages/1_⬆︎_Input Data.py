@@ -11,7 +11,6 @@ db1 = deta.Base("Stone")
 
 n = db.fetch().items
 n1 = db1.fetch().items
-st.write(n1.values())
 
 resultList = list(n1.keys())
 st.write(resultList)
