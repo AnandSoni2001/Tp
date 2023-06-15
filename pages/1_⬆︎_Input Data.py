@@ -10,15 +10,11 @@ db = deta.Base("Jewel")
 db1 = deta.Base("Stone")
 
 n = db.fetch().items
-n1 = db1.fetch()
-
-new = []
-#new_list = list(map(list(n1.items()))
-#st.write(new_list)
-st.write(n1)
+n1 = db1.fetch().items
 
 for i in n1:
-      new.append(i['Stone name'])
+      item = i['Stone name']
+      st.write(item)
 
 #resultList = list(n1.keys())
 st.write(new)
