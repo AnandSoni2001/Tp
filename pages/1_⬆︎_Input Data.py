@@ -60,7 +60,9 @@ with st.form("My"):
     total = kundan+chijat
     date_time = d.strftime("%m/%d/%Y")
     submit_button = st.form_submit_button(label='Submit')
-    new = [list(x) for x in zip(stone, pc)]
+
+    for i, x in enumerate(stone):
+      lst3.append([x, pc[i]])
     
 if submit_button:
     db.put({"Issue Date" : date_time,
@@ -74,7 +76,7 @@ if submit_button:
                 "Kundan Weight" : kundan,
                 "Chijat Weight" : chijat,
                 "Total Weight" : total,
-            "Stone and PCs": new,
+            "Stone and PCs": lst3,
            })
  
     st.write('Data has been submitted') 
