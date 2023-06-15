@@ -7,7 +7,7 @@ import datetime
 from deta import Deta
 
 st.set_page_config(
-    page_title="Jewel Database",
+    page_title="Jewel Database 💍",
     page_icon="👋",
     initial_sidebar_state="expanded",
 )
