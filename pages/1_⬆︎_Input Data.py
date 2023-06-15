@@ -13,8 +13,8 @@ n = db.fetch().items
 n1 = db1.fetch().items
 st.write(type(n1))
 
-resultList = list(n1.keys())
-st.write(resultList)
+#resultList = list(n1.keys())
+#st.write(resultList)
 
 max = 0
 for x in n:
