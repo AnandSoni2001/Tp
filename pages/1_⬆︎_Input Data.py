@@ -45,8 +45,8 @@ with st.form("My"):
         gross = st.number_input('Gross Weight')
         chijat = st.number_input('Chijat')
     
-    stone = [] 
-    pc = []
+    stone[10]
+    pc[10]
 
     def add_row(row):
           with col1:
