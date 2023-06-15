@@ -47,9 +47,9 @@ with st.form("My"):
             
     def add_row(row):
           with col1:
-              st.selectbox('Stone', stones, key=f'stone{row}')
+              f'stone{row}'=st.selectbox('Stone', stones)
           with col2:
-              st.number_input('PCs', key=f'input_amount{row}', step=1)
+              f'pcs{row}'=st.number_input('PCs', step=1)
             
     for r in range(num_rows):
       add_row(r)
@@ -73,7 +73,7 @@ if submit_button:
            })
     for a in range(num_rows):
       db.put({f'Stone {a}': f'stone{a}', 
-              f'Stone {a} PCs': f'input_amount{a}'
+              f'Stone {a} PCs': f'pcs{a}'
              })     
     st.write('Data has been submitted') 
     st.metric(label="Total Weight", value=total)
