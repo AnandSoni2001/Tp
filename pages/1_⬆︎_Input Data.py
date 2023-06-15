@@ -33,7 +33,7 @@ with st.form("My"):
     col1, col2 = st.columns(2)
     with col1:
         d = st.date_input("Issue Date", datetime.date(y, m, day))
-        item = st.text_input('Item', '')
+        item = st.text_input('Item', items)
         ghatpcs = st.number_input('Ghat PCs', step=1)
         pahad = st.number_input('Pahad Weight')
         kundan = st.number_input('Kundan Weight')
@@ -47,7 +47,7 @@ with st.form("My"):
             
     def add_row(row):
           with col1:
-              st.text_input('Stone', key=f'stone{row}')
+              st.selectbox('Stone', key=f'stone{row}', stones)
           with col2:
               st.number_input('PCs', key=f'input_amount{row}')
             
