@@ -13,7 +13,7 @@ n = db.fetch().items
 n1 = db1.fetch().items
 
 df = pd.DataFrame(n1)
-stones = df['Stone name'].values
+stones = df['Stone name'].values.tolist()
 st.write(stones)
 
 max = 0
