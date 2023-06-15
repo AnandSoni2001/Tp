@@ -69,7 +69,7 @@ if authentication_status:
                 c1, c2 = st.columns(2)
                 
                 with c1:
-                    st.write('Recieve Status' : str(i['Status']))
+                    st.write('Recieve Status : ',str(i['Status']))
                     st.write('Jadiya Name : ', str(i['Jadiya Name']))
                     st.write('Ghat PCs : ', str(i['Ghat PCs']))
                     st.write('Issue Date : ', str(i['Issue Date']))
