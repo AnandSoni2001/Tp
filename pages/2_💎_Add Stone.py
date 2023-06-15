@@ -28,7 +28,6 @@ if a:
   try:
     for i in all_items:
       df = pd.DataFrame(i, index=[1])
-      df_print = df.drop('key', axis=1)
       st.write(df_print)
       
   except:
