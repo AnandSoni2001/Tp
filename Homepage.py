@@ -62,20 +62,19 @@ if authentication_status:
         for i in all_items:
             if i['Job Number'] == number:
                 flag = 1
-                #st.write(i)
-                
-                df = pd.DataFrame(i, index=[2])
-                df_print = df.drop('key', axis=1)
-                st.write(df_print)
-                
-                csv = convert_df(df_print)
-
-                st.download_button(
-                    label="Download data",
-                    data=csv,
-                    file_name='data.csv',
-                    mime='text/csv',
-                )
+                st.write('Job Number', i['Job Number'])
+                st.write('Issue Date', i['Issue Date'])
+                st.write('Amount', i['Amount'])
+                st.write('Stones', i['Stones'])
+                st.write('PCs', i['PCs'])
+                st.write('Kundan/Gold', i['Kundan/Gold'])
+                st.write('Jadiya Name', i['Jadiya Name'])
+                st.write('Ghat PCs', i['Ghat PCs'])
+                st.write('Pahad Weight', i['Pahad Weight'])
+                st.write('Kundan Weight', i['Kundan Weight'])
+                st.write('Chijat Weight', i['Chijat Weight'])
+                st.write('Gross Weight', i['Gross Weight'])
+                st.write('Total Weight', i['Total Weight'])
 
         if flag == 0:
             st.write('Data not found')
