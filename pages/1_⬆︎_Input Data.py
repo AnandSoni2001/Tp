@@ -33,13 +33,13 @@ with st.form("My"):
     col1, col2 = st.columns(2)
     with col1:
         d = st.date_input("Issue Date", datetime.date(y, m, day))
-        item = st.text_input('Item', '')
+        item = st.text_input('Kundan/Gold', '')
         ghatpcs = st.number_input('Ghat PCs', step=1)
         pahad = st.number_input('Pahad Weight')
         kundan = st.number_input('Kundan Weight')
 
     with col2:
-        d1 = st.date_input("Receive Date", datetime.date(y, m, day))
+        amt = st.number_input("Amount")
         jadiyaname = st.text_input('Jadiya Name', '')
         jobn = st.number_input('Job number',value=max+1, step=1)
         gross = st.number_input('Gross Weight')
@@ -61,8 +61,8 @@ with st.form("My"):
     
 if submit_button:
     db.put({"Issue Date" : date_time,
-                "Receive Date" : date_time_1,
-                "Item" : item,
+                "Amount" : amt,
+                "Kundan/Gold" : item,
                 "Jadiya Name" : jadiyaname,
                 "Ghat PCs" : ghatpcs,
                 "Job Number" : jobn,
@@ -71,5 +71,7 @@ if submit_button:
                 "Kundan Weight" : kundan,
                 "Chijat Weight" : chijat,
                 "Total Weight" : total})
+    for a in range(num_rows):
+      db.put({"f'Stone {a}":f'stone{a}, "Stone {a} PCs":f'input_amount{row}})     
     st.write('Data has been submitted') 
     st.metric(label="Total Weight", value=total)
