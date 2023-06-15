@@ -53,7 +53,7 @@ with st.form("My"):
               stonepcs = st.number_input('Stone PCs', value=1, step=1)
             
     for r in range(num_rows):
-    add_row(r)
+      add_row(r)
 
     total = kundan+chijat
     date_time = d.strftime("%m/%d/%Y")
