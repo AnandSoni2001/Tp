@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 from deta import Deta
-import datetime
 
 st.set_page_config(page_title="Stone Data 💎", page_icon="")
 
@@ -29,9 +28,3 @@ if a:
   df = pd.DataFrame(all_items)
   df_print = df.drop('key', axis=1)
   st.write(df_print)
-  csv = convert_df(df_print)
-  st.download_button(
-      label="Download all data",
-      data=csv,
-      file_name='data.csv',
-      mime='text/csv',)
