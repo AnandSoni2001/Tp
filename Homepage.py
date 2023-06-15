@@ -37,7 +37,7 @@ if authentication_status:
     all_items = res.items
     
     st.write('\n')
-    number = st.number_input('Enter Job Number', step=1)
+    number = st.number_input('Enter Job Number', step=1, value=1)
     
     st.write('Enter operation :')
     
