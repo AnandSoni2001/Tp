@@ -28,9 +28,6 @@ y=int(today.strftime("%Y"))
 
 # a selection for the user to specify the number of rows
 num_rows = st.slider('Number of Rows', min_value=1,max_value=10,value=1)
-
-for r in range(num_rows):
-    add_row(r)
       
 with st.form("My"):
     col1, col2 = st.columns(2)
@@ -50,10 +47,13 @@ with st.form("My"):
             
     def add_row(row):
           with col1:
-              st.text_input('Expense', key=f'stone{row}')
+              st.text_input('Stone', key=f'stone{row}')
           with col2:
-              st.number_input('Amount', key=f'input_amount{row}')
+              st.number_input('PCs', key=f'input_amount{row}')
               stonepcs = st.number_input('Stone PCs', value=1, step=1)
+            
+    for r in range(num_rows):
+    add_row(r)
 
     total = kundan+chijat
     date_time = d.strftime("%m/%d/%Y")
