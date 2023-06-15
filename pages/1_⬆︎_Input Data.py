@@ -30,7 +30,7 @@ with st.form("My"):
         ghatpcs = st.number_input('Ghat PCs', step=1)
         pahad = st.number_input('Pahad Weight')
         kundan = st.number_input('Kundan Weight')
-        stone = st.text_input('Stone', n1.values)
+        stone = st.text_input('Stone', n1['Stone name'].values)
 
     with col2:
         d1 = st.date_input("Receive Date", datetime.date(y, m, day))
