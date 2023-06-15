@@ -14,6 +14,8 @@ n1 = db1.fetch().items
 
 new = []
 
+st.write(n1)
+
 for i in n1:
       new.append(i['Stone name'])
 
