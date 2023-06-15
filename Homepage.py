@@ -80,7 +80,7 @@ if authentication_status:
                 with c2:
                     if str(i['Status']) == 'Not yet recieved':
                         st.write('Recieved On : N.A.')
-                    else
+                    else :
                         st.write('Recieved On  : ',str(i['Receieve Date']))
                     st.write('Kundan/Gold : ', str(i['Kundan/Gold']))
                     st.write('Pahad Weight : ', str(i['Pahad Weight']))
