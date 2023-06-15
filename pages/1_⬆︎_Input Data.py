@@ -12,6 +12,9 @@ db1 = deta.Base("Stone")
 n = db.fetch().items
 n1 = db1.fetch().items
 
+df = pd.DataFrame(n1)
+stones = df['Stone name'].values.tolist()
+
 max = 0
 for x in n:
       if x["Job Number"]>max :
