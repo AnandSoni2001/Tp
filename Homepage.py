@@ -8,7 +8,7 @@ from deta import Deta
 
 st.set_page_config(
     page_title="Kundans Data 💍",
-    page_icon="👋",
+    page_icon="💍",
     initial_sidebar_state="expanded",
 )
 
