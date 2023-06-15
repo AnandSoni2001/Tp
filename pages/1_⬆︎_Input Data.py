@@ -13,8 +13,8 @@ n = db.fetch().items
 n1 = db1.fetch()
 
 new = []
-new_list = list(map(list(n1.items()))
-st.write(new_list)
+#new_list = list(map(list(n1.items()))
+#st.write(new_list)
 st.write(n1)
 
 for i in n1:
