@@ -2,8 +2,6 @@ import pandas as pd
 import streamlit as st
 import datetime
 from deta import Deta
-from typing import List
-from pydantic import BaseModel
 
 st.set_page_config(page_title="Enter Data", page_icon="📈")
 
@@ -18,12 +16,9 @@ df = pd.DataFrame(n1)
 stones = df['Stone name'].values.tolist()
 st.write(stones)
 
-class MyCustomData(BaseModel):
-    name: str
-    age: int
-    friends: List[int]
-
-st.get_input(MyCustomData)
+edited_df = st.experimental_data_editor(df)
+favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
+st.markdown(f"Your favorite command is **{favorite_command}** 🎈,num_rows=”dynamic”)
 
 max = 0
 for x in n:
