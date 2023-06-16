@@ -98,5 +98,5 @@ if genre == 'Partial' :
                                      
                       if submit_button:         
                              keydata = str(j['key'])
-                             db.update({"Receive Date": d11, "Comments" : cmts1, "Receive Amount" : amt1, "Stones": stone, "PCs":pc}},keydata,)
+                             db.update({"Receive Date": d11, "Comments" : cmts1, "Receive Amount" : amt1, "Stones": stone, "PCs":pc},keydata,)
                              st.write("Data submitted !")
