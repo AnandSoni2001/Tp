@@ -59,6 +59,7 @@ if genre == 'Full':
                       with st.form("Full2"):               
                             d1 = st.date_input('Receive Date', datetime.date(y, m, day))
                             cmts1 = st.text_input('Comments', '')
+                            d11 = d1.strftime("%m/%d/%Y")
                             submit_button = st.form_submit_button(label='Submit')
                       if submit_button:         
                             db.put({"Receive Date" : d11, "Comments" :cmts1})
