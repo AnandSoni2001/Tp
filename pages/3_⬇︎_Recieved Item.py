@@ -18,10 +18,10 @@ st.title('Please select one of the box !')
 c1, c2 = st.columns(2)
 
 with c1:
-      part_butt = st.button('Partially received')
+      part_butt = st.checkbox('Partially received')
 
 with c2:
-      full_butt = st.button('Fully received')
+      full_butt = st.checkbox('Fully received')
   
 today = datetime.date.today()
 day=int(today.strftime("%d"))
