@@ -105,10 +105,10 @@ if authentication_status:
                             with c2:
                                 st.write('Amount Recieved : ', str(j['Amount']))
                         elif str(j['Status']) == 'F':
-                            st.write('Recieved Status : Item has been fully recieved')
+                            st.write('Recieved Status : Item has been fully recieved !')
                         
                         elif str(j['Status']) == 'N':
-                            st.write('Recieved Status : Item has been fully recieved')
+                            st.write('Recieved Status : Item not recieved yet !')
                 if flag1 == 0:
                     st.write('Recieve Status : Item not found')
 
