@@ -6,7 +6,7 @@ from deta import Deta
 st.set_page_config(page_title="Received Items", page_icon="👑")
 
 deta = Deta(st.secrets["key_number"])
-db = deta.Base("Receive")
+db = deta.Base("Receieve")
 db1 = deta.Base("Stone")
 all_items = db.fetch().items
 n1 = db1.fetch().items
