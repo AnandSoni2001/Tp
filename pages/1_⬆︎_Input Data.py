@@ -8,7 +8,7 @@ st.set_page_config(page_title="Enter Data", page_icon="📈")
 deta = Deta(st.secrets["key_number"])
 db = deta.Base("Jewel")
 db1 = deta.Base("Stone")
-db2 = deta.Base("Receive")
+db2 = deta.Base("Receieve")
 
 n = db.fetch().items
 n1 = db1.fetch().items
