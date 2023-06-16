@@ -12,7 +12,7 @@ db1 = deta.Base("Stone")
 n = db.fetch().items
 n1 = db1.fetch().items
 
-jn = st.number_input('Enter job number')
+jn = st.number_input('Enter job number', value=1, step=1)
 
 st.title('Please select one of the box !')
 c1, c2 = st.columns(2)
@@ -83,44 +83,26 @@ if part_butt :
       flag = 0
       for j in all_items:
             if j['Job Number'] == jn:
-                flag = 1
-                flag1 = 0
-                flag2 = 0                     
-                num_rows = st.slider('Number of different stones', min_value=1,max_value=10,value=1)                     
-                if str(j['Status']) == 'N':
-                      col1, col2 = st.columns(2)
-                      with col1:
-                            if st.session_state.get('button') != True:
-                                  st.session_state['button'] = part_butt
-                            if st.session_state['button'] == True:
-                                  o1 = st.checkbox('Amount')
-                      with col2:
-                            if st.session_state.get('button') != True:
-                                  st.session_state['button'] = part_butt
-                            if st.session_state['button'] == True:
-                                  o2 = st.checkbox('Stones')
-                                     
+                flag = 1                   
+                num_rows = st.slider('Number of different stones', min_value=0,max_value=10,value=1)                     
+                if str(j['Status']) == 'N':                                     
                       with st.form("Part1"):
-                            c1, c2 = st.columns(2)       
-                            d1 = st.date_input('Receive Date', datetime.date(y, m, day))
-                                     
-                            if o1 and st.session_state['button'] == True:
-                                  amt1 = st.number_input("Amount")
-                                  flag1 = 1   
-                            
-                            if o2 and st.session_state['button'] == True:
-                                  flag2 = 1   
-                                  stone = [None] * num_rows
-                                  pc = [None] * num_rows
+                            c1, c2 = st.columns(2)
+                            with c1:
+                                  d1 = st.date_input('Receive Date', datetime.date(y, m, day))                            
+                            with c2:
+                                  amt = st.number_input('Amount', value=0, step=1) 
+                            stone = [None] * num_rows
+                            pc = [None] * num_rows
 
-                                  def add_row(row):
-                                        with c1:
-                                            stone[row] = st.selectbox('Stones', stones, key=f'stone{row}')
-                                        with c2:
-                                            pc[row] = st.number_input('PCs', step=1, key=f'pcs{row}')
+                            def add_row(row):
+                                  with c1:
+                                      stone[row] = st.selectbox('Stones', stones, key=f'stone{row}')
+                                  with c2:
+                                      pc[row] = st.number_input('PCs', step=1, key=f'pcs{row}')
 
-                                  for r in range(num_rows):
-                                        add_row(r)
+                            for r in range(num_rows):
+                                  add_row(r)
                             cmts1 = st.text_input('Comments', '')
                             submit_button = st.form_submit_button(label='Submit')
                                      
