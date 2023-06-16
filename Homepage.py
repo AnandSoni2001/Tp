@@ -93,7 +93,7 @@ if authentication_status:
                 
                 flag1 = 0
                 for j in all_items1 :
-                    if j['Job Number'] == number:
+                    if j['Job No'] == number:
                         flag1 = 1
                         if str(j['Status']) == 'P':
                             st.write('Recieved Status : Partially Recieved')
