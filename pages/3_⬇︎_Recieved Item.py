@@ -58,7 +58,7 @@ if full_butt :
                       if submit_button:
                             keydata = str(j['key'])
                             base.update({"Receive Date": d11, "Comments" : cmts1},keydata,)
-                            st.write("Data updated !)
+                            st.write("Data updated !")
 
 
                 elif str(j['Status']) == 'F':
@@ -74,7 +74,7 @@ if full_butt :
                             submit_button = st.form_submit_button(label='Submit')
                       if submit_button:         
                             db.put({"Receive Date" : d11, "Comments" :cmts1})
-                            st.write("Data submitted !)
+                            st.write("Data submitted !")
 
       if flag == 0 :
             st.write('Data not found !')
@@ -126,4 +126,4 @@ if part_butt :
                                      
                        if submit_button:         
                              db.put({"Receive Date" : d11, "Comments" :cmts1, "Receive Amount" : amt1, "Stones": stone, "PCs":pc}) 
-                             st.write("Data submitted !)
+                             st.write("Data submitted !")
