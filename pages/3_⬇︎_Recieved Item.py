@@ -45,7 +45,7 @@ if genre == 'Full':
 
                       if submit_button:
                             keydata = str(j['key'])
-                            base.update({"Receive Date": d11, "Comments" : cmts1},keydata,)
+                            db.update({"Receive Date": d11, "Comments" : cmts1},keydata,)
                             st.write("Data updated !")
 
 
@@ -62,7 +62,8 @@ if genre == 'Full':
                             d11 = d1.strftime("%m/%d/%Y")
                             submit_button = st.form_submit_button(label='Submit')
                       if submit_button:         
-                            db.put({"Receive Date" : d11, "Comments" :cmts1})
+                            keydata = str(j['key'])
+                            db.update({"Receive Date": d11, "Comments" : cmts1},keydata,)
                             st.write("Data submitted !")
 
       if flag == 0 :
@@ -96,5 +97,6 @@ if genre == 'Partial' :
                             submit_button = st.form_submit_button(label='Submit')
                                      
                       if submit_button:         
-                             db.put({"Receive Date" : d11, "Comments" :cmts1, "Receive Amount" : amt1, "Stones": stone, "PCs":pc}) 
+                             keydata = str(j['key'])
+                             db.update({"Receive Date": d11, "Comments" : cmts1, "Receive Amount" : amt1, "Stones": stone, "PCs":pc}},keydata,)
                              st.write("Data submitted !")
