@@ -25,7 +25,7 @@ stones = df['Stone name'].values.tolist()
 if genre == 'Full':      
       flag = 0
       for j in all_items:
-            if j['Job Number'] == jn:
+            if j['Job No'] == jn:
                 flag = 1
                 if str(j['Status']) == 'P':
                       st.write('')  
@@ -71,7 +71,7 @@ if genre == 'Full':
 if genre == 'Partial' :
       flag = 0
       for j in all_items:
-            if j['Job Number'] == jn:
+            if j['Job No'] == jn:
                 flag = 1                   
                 num_rows = st.slider('Number of different stones', min_value=0,max_value=10,value=1)                     
                 if str(j['Status']) == 'N':                                     
