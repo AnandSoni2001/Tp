@@ -55,6 +55,8 @@ with st.form("My"):
             
     for r in range(num_rows):
       add_row(r)
+      
+    comm = st.text_input('Comments', '')
 
     total = kundan+chijat
     date_time = d.strftime("%m/%d/%Y")
@@ -72,7 +74,7 @@ if submit_button:
                 "Kundan Weight" : kundan,
                 "Chijat Weight" : chijat,
                 "Total Weight" : total,
-            "Stones": stone, "PCs":pc,
+            "Stones": stone, "PCs":pc, "Comments" : comm
            })
  
     st.write('Data has been submitted') 
