@@ -14,7 +14,7 @@ n1 = db1.fetch().items
 
 jn = st.number_input('Enter job number', value=1, step=1)
 
-st.title('Please select one of the box !')
+genre = st.radio("What kind of Receieve",('Partial', 'Full'))
 c1, c2 = st.columns(2)
 
 with c1:
@@ -34,7 +34,7 @@ all_items = res.items
 df = pd.DataFrame(n1)
 stones = df['Stone name'].values.tolist()
 
-if full_butt :        
+if genre == 'Full':      
       flag = 0
       for j in all_items:
             if j['Job Number'] == jn:
@@ -79,7 +79,7 @@ if full_butt :
       if flag == 0 :
             st.write('Data not found !')
                         
-if part_butt :
+if genre == 'Partial' :
       flag = 0
       for j in all_items:
             if j['Job Number'] == jn:
