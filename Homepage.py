@@ -97,16 +97,20 @@ if authentication_status:
                         flag1 = 1
                         if str(j['Status']) == 'P':
                             st.write('Recieved Status : Partially Recieved')
+                            with c1:
+                                st.write('Recieved On  : ',str(j['Receieve Date']))
+                            st.write('Stones : ', str(j['Stones']))
+                            st.write('PCs : ', str(j['PCs']))
+                            st.write('Comments : ', str(j['Comments']))
+                            with c2:
+                                st.write('Amount Recieved : ', str(j['Amount']))
                         elif str(j['Status']) == 'F':
                             st.write('Recieved Status : Item has been fully recieved')
-                        st.write('Recieved On  : ',str(j['Receieve Date']))
-                        st.write('Stones : ', str(j['Stones']))
-                        st.write('PCs : ', str(j['PCs']))
-                        st.write('Comments : ', str(j['Comments']))
-                        st.write('Amount Recieved : ', str(j['Amount']))
-                
+                        
+                        elif str(j['Status']) == 'N':
+                            st.write('Recieved Status : Item has been fully recieved')
                 if flag1 == 0:
-                    st.write('Recieve Status : Item not yet recieved')
+                    st.write('Recieve Status : Item not found')
 
         if flag == 0:
             st.write('Data not found')
