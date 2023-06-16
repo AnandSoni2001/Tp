@@ -124,6 +124,6 @@ if part_butt :
                             cmts1 = st.text_input('Comments', '')
                             submit_button = st.form_submit_button(label='Submit')
                                      
-                       if submit_button:         
+                      if submit_button:         
                              db.put({"Receive Date" : d11, "Comments" :cmts1, "Receive Amount" : amt1, "Stones": stone, "PCs":pc}) 
                              st.write("Data submitted !")
