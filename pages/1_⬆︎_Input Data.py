@@ -79,6 +79,6 @@ if submit_button:
             "Stones": stone, "PCs":pc, "Comments" : comm
            })
       
-    db2.put({"Job Number" : jobn, "Status" : 'N'})
+    db2.put({"Job No" : jobn, "Status" : 'N'})
     st.write('Data has been submitted') 
     st.metric(label="Total Weight", value=total)
