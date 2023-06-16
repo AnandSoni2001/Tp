@@ -8,28 +8,16 @@ st.set_page_config(page_title="Received Items", page_icon="👑")
 deta = Deta(st.secrets["key_number"])
 db = deta.Base("Receive")
 db1 = deta.Base("Stone")
-
-n = db.fetch().items
+all_items = db.fetch().items
 n1 = db1.fetch().items
 
 jn = st.number_input('Enter job number', value=1, step=1)
-
 genre = st.radio("What kind of Receieve",('Partial', 'Full'))
-c1, c2 = st.columns(2)
 
-with c1:
-      part_butt = st.checkbox('Partially received')
-
-with c2:
-      full_butt = st.checkbox('Fully received')
-  
 today = datetime.date.today()
 day=int(today.strftime("%d"))
 m=int(today.strftime("%m"))
 y=int(today.strftime("%Y"))
-
-res = db.fetch()
-all_items = res.items
 
 df = pd.DataFrame(n1)
 stones = df['Stone name'].values.tolist()
