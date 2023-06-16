@@ -32,9 +32,13 @@ if authentication_status:
     
     deta = Deta(st.secrets["key_number"])
     db = deta.Base("Jewel")
+    db1 = deta.Base("Receieve")
     
     res = db.fetch()
     all_items = res.items
+    
+    res1 = db1.fetch()
+    all_items1 = res1.items
     
     st.write('\n')
     number = st.number_input('Enter Job Number', step=1, value=1)
@@ -69,7 +73,6 @@ if authentication_status:
                 c1, c2 = st.columns(2)
                 
                 with c1:
-                    st.write('Recieve Status : ',str(i['Status']))
                     st.write('Jadiya Name : ', str(i['Jadiya Name']))
                     st.write('Ghat PCs : ', str(i['Ghat PCs']))
                     st.write('Issue Date : ', str(i['Issue Date']))
@@ -78,10 +81,6 @@ if authentication_status:
                     
                 
                 with c2:
-                    if str(i['Status']) == 'Not yet recieved':
-                        st.write('Recieved On : N.A.')
-                    else :
-                        st.write('Recieved On  : ',str(i['Receieve Date']))
                     st.write('Kundan/Gold : ', str(i['Kundan/Gold']))
                     st.write('Pahad Weight : ', str(i['Pahad Weight']))
                     st.write('Kundan Weight : ', str(i['Kundan Weight']))
@@ -92,6 +91,22 @@ if authentication_status:
                 st.write('PCs : ', str(i['PCs']))
                 st.write('Comments : ', str(i['Comments']))
                 
+                flag1 = 0
+                for j in all_items1 :
+                    if j['Job Number'] == number:
+                        flag1 = 1
+                        if str(j['Status']) == 'P':
+                            st.write('Recieved Status : Partially Recieved')
+                        elif str(j['Status']) == 'F':
+                            st.write('Recieved Status : Item has been fully recieved')
+                        st.write('Recieved On  : ',str(j['Receieve Date']))
+                        st.write('Stones : ', str(j['Stones']))
+                        st.write('PCs : ', str(j['PCs']))
+                        st.write('Comments : ', str(j['Comments']))
+                        st.write('Amount Recieved : ', str(j['Amount']))
+                
+                if flag1 == 0:
+                    st.write('Recieve Status : Item not yet recieved')
 
         if flag == 0:
             st.write('Data not found')
