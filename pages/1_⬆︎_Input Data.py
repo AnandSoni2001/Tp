@@ -8,9 +8,11 @@ st.set_page_config(page_title="Enter Data", page_icon="📈")
 deta = Deta(st.secrets["key_number"])
 db = deta.Base("Jewel")
 db1 = deta.Base("Stone")
+db2 = deta.Base("Receive")
 
 n = db.fetch().items
 n1 = db1.fetch().items
+n2 = db2.fetch().items
 
 df = pd.DataFrame(n1)
 stones = df['Stone name'].values.tolist()
@@ -76,6 +78,7 @@ if submit_button:
                 "Total Weight" : total,
             "Stones": stone, "PCs":pc, "Comments" : comm
            })
- 
+      
+    db2.put({"Job Number" : jobn, "Status" : 'N'})
     st.write('Data has been submitted') 
     st.metric(label="Total Weight", value=total)
