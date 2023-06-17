@@ -101,8 +101,8 @@ if genre == 'Partial' :
                              db.update({"Receive Date": d11, "Comments" : cmts1, "Receive Amount" : amt1, "Stones": stone, "PCs":pc},keydata,)
                              st.write("Data submitted !")
                
-                 if str(j['Status']) == 'F':
+                if str(j['Status']) == 'F':
                         st.write("This items is already fully receieved !")
                         
-                 if str(j['Status']) == 'P':
+                if str(j['Status']) == 'P':
                         st.write("This items is already partially receieved !")
