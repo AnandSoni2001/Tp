@@ -91,6 +91,9 @@ if authentication_status:
                 st.write('PCs : ', str(i['PCs']))
                 st.write('Comments : ', str(i['Comments']))
                 
+                st.write('')
+                st.header('Receieve Status')
+                st.write('')
                 flag1 = 0
                 for j in all_items1 :
                     if j['Job No'] == number:
