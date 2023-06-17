@@ -42,7 +42,7 @@ if authentication_status:
     
     st.write('\n')
     
-    opt = st.radio("Select an operation",('Search', 'Update', 'Delete'), horizontal = True)       
+    opt = st.radio("Select an operation",('All data','Search', 'Update', 'Delete'), horizontal = True)       
         
     def convert_df(df):
         return df.to_csv().encode('utf-8')
@@ -133,28 +133,26 @@ if authentication_status:
     if opt=='Update':
         st.write('Key under construction!')
     
-    st.write('')
-    st.header('See all data under here')
-    st.write('')
-    a = st.button('View !')
-    if a:
-        try:
-            df = pd.DataFrame(all_items)
+    if opt =='All data':
+        a = st.button('View !')
+        if a:
+            try:
+                df = pd.DataFrame(all_items)
 
-            df_print = df.drop('key', axis=1)
-            st.write(df_print)
+                df_print = df.drop('key', axis=1)
+                st.write(df_print)
 
-            csv = convert_df(df_print)
+                csv = convert_df(df_print)
 
-            st.download_button(
-                label="Download all data",
-                data=csv,
-                file_name='data.csv',
-                mime='text/csv',
-            )
+                st.download_button(
+                    label="Download all data",
+                    data=csv,
+                    file_name='data.csv',
+                    mime='text/csv',
+                )
 
-        except:
-            st.write('No data to display')
+            except:
+                st.write('No data to display')
             
 elif authentication_status is False:
     st.error('Username/password is incorrect')
