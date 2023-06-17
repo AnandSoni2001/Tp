@@ -73,15 +73,15 @@ if genre == 'Partial' :
       flag = 0
       for j in all_items:
             if j['Job No'] == jn:
-                flag = 1                   
-                num_rows = st.slider('Number of different stones', min_value=0,max_value=10,value=1)                     
+                flag = 1                                       
                 if str(j['Status']) == 'N':                                     
                       with st.form("Part1"):
                             c1, c2 = st.columns(2)
                             with c1:
                                   d1 = st.date_input('Receive Date', datetime.date(y, m, day))                            
                             with c2:
-                                  amt = st.number_input('Amount', value=0, step=1) 
+                                  amt = st.number_input('Amount', value=0, step=1)
+                            num_rows = st.slider('Number of different stones', min_value=0,max_value=10,value=1) 
                             stone = [None] * num_rows
                             pc = [None] * num_rows
 
