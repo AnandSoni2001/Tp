@@ -96,7 +96,8 @@ if genre == 'Partial' :
                             cmts1 = st.text_input('Comments', '')
                             submit_button = st.form_submit_button(label='Submit')
                                      
-                      if submit_button:         
+                      if submit_button: 
+                             d11 = d1.strftime("%m/%d/%Y")
                              keydata = str(j['key'])
                              db.update({"Receive Date": d11, "Comments" : cmts1, "Receive Amount" : amt1, "Stones": stone, "PCs":pc},keydata,)
                              st.write("Data submitted !")
