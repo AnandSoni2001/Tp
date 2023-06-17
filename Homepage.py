@@ -43,7 +43,6 @@ if authentication_status:
     st.write('\n')
     
     opt = st.radio("Select an operation",('Search', 'Update', 'Delete'), horizontal = True)       
-    a = st.button('View all data !')
         
     def convert_df(df):
         return df.to_csv().encode('utf-8')
@@ -134,6 +133,10 @@ if authentication_status:
     if opt=='Update':
         st.write('Key under construction!')
     
+    st.write('')
+    st.header('See all data under here')
+    st.write('')
+    a = st.button('View !')
     if a:
         try:
             df = pd.DataFrame(all_items)
