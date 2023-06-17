@@ -103,7 +103,7 @@ if authentication_status:
                             st.write('PCs : ', str(j['PCs']))
                             st.write('Comments after partially receieved : ', str(j['Comments']))
                             with c2:
-                                st.write('Amount Recieved : ', str(j['Amount']))
+                                st.write('Amount Recieved : ', str(j['Receieve Amount']))
                         elif str(j['Status']) == 'F':
                             st.write('Recieved Status : Item has been fully recieved !')
                             st.write('Comments after fully receieved : ', str(j['Comments_Full']))
