@@ -45,7 +45,7 @@ if genre == 'Full':
 
                       if submit_button:
                             keydata = str(j['key'])
-                            db.update({"Receive Date": d11, "Comments_Full" : cmts1, "Status":'F'},keydata,)
+                            db.update({"Receieve Date": d11, "Comments_Full" : cmts1, "Status":'F'},keydata,)
                             st.write("Data updated !")
 
 
@@ -57,13 +57,13 @@ if genre == 'Full':
                       st.header('Enter details')
                       st.write('')
                       with st.form("Full2"):               
-                            d1 = st.date_input('Receive Date', datetime.date(y, m, day))
+                            d1 = st.date_input('Receieve Date', datetime.date(y, m, day))
                             cmts1 = st.text_input('Comments', '')
                             d11 = d1.strftime("%m/%d/%Y")
                             submit_button = st.form_submit_button(label='Submit')
                       if submit_button:         
                             keydata = str(j['key'])
-                            db.update({"Receive Date": d11, "Comments_Full" : cmts1, "Status":'F'},keydata,)
+                            db.update({"Receieve Date": d11, "Comments_Full" : cmts1, "Status":'F'},keydata,)
                             st.write("Data submitted !")
 
       if flag == 0 :
@@ -99,7 +99,7 @@ if genre == 'Partial' :
                       if submit_button: 
                              d11 = d1.strftime("%m/%d/%Y")
                              keydata = str(j['key'])
-                             db.update({"Status":'P',"Receive Date": d11, "Comments" : cmts1, "Receive Amount" : amt1, "Stones": stone, "PCs":pc},keydata,)
+                             db.update({"Status":'P',"Receieve Date": d11, "Comments" : cmts1, "Receieve Amount" : amt1, "Stones": stone, "PCs":pc},keydata,)
                              st.write("Data submitted !")
                
                 if str(j['Status']) == 'F':
