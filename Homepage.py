@@ -114,7 +114,7 @@ if authentication_status:
         number = st.number_input('Enter Job Number', step=1, value=1)
         agree = st.checkbox('Are you sure, this action cannot be undone ?')
         x = st.button('Delete')
-            if x and agree :
+        if x and agree :
             flag = 0   
             for i in all_items:
                 if i['Job Number'] == number:
