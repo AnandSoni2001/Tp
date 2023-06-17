@@ -95,17 +95,19 @@ if authentication_status:
                 st.header('Receieve Status')
                 st.write('')
                 flag1 = 0
+                
+                c11, c22 = st.columns(2)
                 for j in all_items1 :
                     if j['Job No'] == number:
                         flag1 = 1
                         if str(j['Status']) == 'P':
                             st.write('Recieved Status : Partially Recieved')
-                            with c1:
+                            with c11:
                                 st.write('Recieved On  : ',str(j['Receieve Date']))
                             st.write('Stones : ', str(j['Stones']))
                             st.write('PCs : ', str(j['PCs']))
                             st.write('Comments after partially receieved : ', str(j['Comments']))
-                            with c2:
+                            with c22:
                                 st.write('Amount Recieved : ', str(j['Receieve Amount']))
                         elif str(j['Status']) == 'F':
                             st.write('Recieved Status : Item has been fully recieved !')
