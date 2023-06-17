@@ -106,3 +106,6 @@ if genre == 'Partial' :
                         
                 if str(j['Status']) == 'P':
                         st.write("This items is already partially receieved !")
+                        
+      if flag == 0 :
+            st.write('Data not found !')
