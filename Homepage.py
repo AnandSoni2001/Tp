@@ -101,12 +101,12 @@ if authentication_status:
                                 st.write('Recieved On  : ',str(j['Receieve Date']))
                             st.write('Stones : ', str(j['Stones']))
                             st.write('PCs : ', str(j['PCs']))
-                            st.write('Comments : ', str(j['Comments']))
+                            st.write('Comments after partially receieved : ', str(j['Comments']))
                             with c2:
                                 st.write('Amount Recieved : ', str(j['Amount']))
                         elif str(j['Status']) == 'F':
                             st.write('Recieved Status : Item has been fully recieved !')
-                        
+                            st.write('Comments after fully receieved : ', str(j['Comments_Full']))
                         elif str(j['Status']) == 'N':
                             st.write('Recieved Status : Item not recieved yet !')
                 if flag1 == 0:
