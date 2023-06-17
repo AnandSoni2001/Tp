@@ -32,7 +32,7 @@ num_rows = st.slider('Number of different stones', min_value=0,max_value=10,valu
 with st.form("My"):
     col1, col2 = st.columns(2)
     with col1:
-        d = st.date_input("Issue Date", datetime.date(day, m, y))
+        d = st.date_input("Issue Date", datetime.date(y, m, day))
         item = st.text_input('Kundan/Gold', '')
         ghatpcs = st.number_input('Ghat PCs', step=1)
         pahad = st.number_input('Pahad Weight')
