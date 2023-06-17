@@ -80,7 +80,7 @@ if genre == 'Partial' :
                             with c1:
                                   d1 = st.date_input('Receive Date', datetime.date(y, m, day))                            
                             with c2:
-                                  amt = st.number_input('Amount', value=0, step=1)
+                                  amt1 = st.number_input('Amount', value=0, step=1)
                             num_rows = st.slider('Number of different stones', min_value=0,max_value=10,value=1) 
                             stone = [None] * num_rows
                             pc = [None] * num_rows
