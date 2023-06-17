@@ -99,7 +99,7 @@ if genre == 'Partial' :
                       if submit_button: 
                              d11 = d1.strftime("%m/%d/%Y")
                              keydata = str(j['key'])
-                             db.update({"Receive Date": d11, "Comments" : cmts1, "Receive Amount" : amt1, "Stones": stone, "PCs":pc},keydata,)
+                             db.update({"Status":'P',"Receive Date": d11, "Comments" : cmts1, "Receive Amount" : amt1, "Stones": stone, "PCs":pc},keydata,)
                              st.write("Data submitted !")
                
                 if str(j['Status']) == 'F':
