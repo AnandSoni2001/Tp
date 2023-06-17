@@ -123,6 +123,11 @@ if authentication_status:
                 keydata = str(i['key'])
                 db.delete(keydata)
                 st.write('Data deleted')
+                
+                for j in all_items1:
+                    if j['Job Number'] == number:
+                        keydata1 = str(j['key'])
+                        db1.delete(keydata1)
 
         if flag == 0:
             st.write('Data not found') 
