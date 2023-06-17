@@ -41,103 +41,97 @@ if authentication_status:
     all_items1 = res1.items
     
     st.write('\n')
-    number = st.number_input('Enter Job Number', step=1, value=1)
     
-    st.write('Enter operation :')
-    
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        x = st.button('Search')
-    
-    with col2:
-        y = st.button('Delete')
-        
-    with col3:
-        z = st.button('Update')
-        
-    with col4:
-        a = st.button('View all data !')
+    opt = st.radio("Select an operation",('Search', 'Update', 'Delete'), horizontal = True)       
+    a = st.button('View all data !')
         
     def convert_df(df):
         return df.to_csv().encode('utf-8')
     
-    if x:
-        flag = 0
-        st.header('Details') 
-        
-        for i in all_items:
-            if i['Job Number'] == number:
-                flag = 1
-                
-                st.write('Job Number : ', str(i['Job Number']))
-                c1, c2 = st.columns(2)
-                
-                with c1:
-                    st.write('Jadiya Name : ', str(i['Jadiya Name']))
-                    st.write('Ghat PCs : ', str(i['Ghat PCs']))
-                    st.write('Issue Date : ', str(i['Issue Date']))
-                    st.write('Amount : ', str(i['Amount']))
-                    st.write('Gross Weight : ', str(i['Gross Weight']))
-                    
-                
-                with c2:
-                    st.write('Kundan/Gold : ', str(i['Kundan/Gold']))
-                    st.write('Pahad Weight : ', str(i['Pahad Weight']))
-                    st.write('Kundan Weight : ', str(i['Kundan Weight']))
-                    st.write('Chijat Weight : ', str(i['Chijat Weight']))
-                    st.write('Total Weight : ', str(i['Total Weight']))
+    if opt == 'Search':
+        number = st.number_input('Enter Job Number', step=1, value=1)
+        x = st.button('Submit')
+        if x:
+            flag = 0
+            st.header('Details') 
 
-                st.write('Stones : ', str(i['Stones']))
-                st.write('PCs : ', str(i['PCs']))
-                st.write('Comments : ', str(i['Comments']))
-                
-                st.write('')
-                st.header('Receieve Status')
-                st.write('')
-                flag1 = 0
-                
-                c11, c22 = st.columns(2)
-                for j in all_items1 :
-                    if j['Job No'] == number:
-                        flag1 = 1
-                        if str(j['Status']) == 'P':
-                            st.write('Recieved Status : Partially Recieved')
-                            with c11:
-                                st.write('Recieved On  : ',str(j['Receieve Date']))
-                            st.write('Stones : ', str(j['Stones']))
-                            st.write('PCs : ', str(j['PCs']))
-                            st.write('Comments after partially receieved : ', str(j['Comments']))
-                            with c22:
-                                st.write('Amount Recieved : ', str(j['Receieve Amount']))
-                        elif str(j['Status']) == 'F':
-                            st.write('Recieved Status : Item has been fully recieved !')
-                            st.write('Comments after fully receieved : ', str(j['Comments_Full']))
-                        elif str(j['Status']) == 'N':
-                            st.write('Recieved Status : Item not recieved yet !')
-                if flag1 == 0:
-                    st.write('Recieve Status : Item not found')
+            for i in all_items:
+                if i['Job Number'] == number:
+                    flag = 1
 
-        if flag == 0:
-            st.write('Data not found')
+                    st.write('Job Number : ', str(i['Job Number']))
+                    c1, c2 = st.columns(2)
 
-    if y:
-        flag = 0   
-        for i in all_items:
-            if i['Job Number'] == number:
-                flag = 1
-                keydata = str(i['key'])
-                db.delete(keydata)
-                st.write('Data deleted')
-                
-                for j in all_items1:
-                    if j['Job Number'] == number:
-                        keydata1 = str(j['key'])
-                        db1.delete(keydata1)
+                    with c1:
+                        st.write('Jadiya Name : ', str(i['Jadiya Name']))
+                        st.write('Ghat PCs : ', str(i['Ghat PCs']))
+                        st.write('Issue Date : ', str(i['Issue Date']))
+                        st.write('Amount : ', str(i['Amount']))
+                        st.write('Gross Weight : ', str(i['Gross Weight']))
 
-        if flag == 0:
-            st.write('Data not found') 
+
+                    with c2:
+                        st.write('Kundan/Gold : ', str(i['Kundan/Gold']))
+                        st.write('Pahad Weight : ', str(i['Pahad Weight']))
+                        st.write('Kundan Weight : ', str(i['Kundan Weight']))
+                        st.write('Chijat Weight : ', str(i['Chijat Weight']))
+                        st.write('Total Weight : ', str(i['Total Weight']))
+
+                    st.write('Stones : ', str(i['Stones']))
+                    st.write('PCs : ', str(i['PCs']))
+                    st.write('Comments : ', str(i['Comments']))
+
+                    st.write('')
+                    st.header('Receieve Status')
+                    st.write('')
+                    flag1 = 0
+
+                    c11, c22 = st.columns(2)
+                    for j in all_items1 :
+                        if j['Job No'] == number:
+                            flag1 = 1
+                            if str(j['Status']) == 'P':
+                                st.write('Recieved Status : Partially Recieved')
+                                with c11:
+                                    st.write('Recieved On  : ',str(j['Receieve Date']))
+                                st.write('Stones : ', str(j['Stones']))
+                                st.write('PCs : ', str(j['PCs']))
+                                st.write('Comments after partially receieved : ', str(j['Comments']))
+                                with c22:
+                                    st.write('Amount Recieved : ', str(j['Receieve Amount']))
+                            elif str(j['Status']) == 'F':
+                                st.write('Recieved Status : Item has been fully recieved !')
+                                st.write('Comments after fully receieved : ', str(j['Comments_Full']))
+                            elif str(j['Status']) == 'N':
+                                st.write('Recieved Status : Item not recieved yet !')
+                    if flag1 == 0:
+                        st.write('Recieve Status : Item not found')
+
+            if flag == 0:
+                st.write('Data not found')
+
+    if opt=='Delete':
+        number = st.number_input('Enter Job Number', step=1, value=1)
+        agree = st.checkbox('Are you sure, this action cannot be undone ?')
+        x = st.button('Delete')
+            if x and agree :
+            flag = 0   
+            for i in all_items:
+                if i['Job Number'] == number:
+                    flag = 1
+                    keydata = str(i['key'])
+                    db.delete(keydata)
+                    st.write('Data deleted')
+
+                    for j in all_items1:
+                        if j['Job Number'] == number:
+                            keydata1 = str(j['key'])
+                            db1.delete(keydata1)
+
+            if flag == 0:
+                st.write('Data not found') 
             
-    if z:
+    if opt=='Update':
         st.write('Key under construction!')
     
     if a:
