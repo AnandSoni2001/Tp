@@ -44,12 +44,11 @@ with st.form("My"):
         jobn = st.number_input('Job number',value=max+1, step=1)
         gross = st.number_input('Gross Weight')
         chijat = st.number_input('Chijat')
-    
+        
+    num_rows = st.slider('Number of different stones', min_value=0,max_value=10,value=1)    
     stone = [None] * num_rows
     pc = [None] * num_rows
-    
-    num_rows = st.slider('Number of different stones', min_value=0,max_value=10,value=1)    
-
+      
     def add_row(row):
           with col1:
               stone[row] = st.selectbox('Stones', stones, key=f'stone{row}')
